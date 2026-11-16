@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NBA File Checking – Criteria 1–9 Progress</title>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1c2233;--mute:#667085;--line:#e3e6ef;--acc:#2f5bea;--ok:#12805c;--warn:#b7791f;--todo:#98a2b3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10131c;--card:#181c28;--ink:#e8ebf5;--mute:#9aa3b8;--line:#2a3042;--acc:#7b9bff;--ok:#4cc9a0;--warn:#e8b45a;--todo:#6b7388}}
+:root[data-theme="dark"]{--bg:#10131c;--card:#181c28;--ink:#e8ebf5;--mute:#9aa3b8;--line:#2a3042;--acc:#7b9bff;--ok:#4cc9a0;--warn:#e8b45a;--todo:#6b7388}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:22px;margin:0 0 4px}
+.sub{color:var(--mute);font-size:13px;margin:0 0 16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--mute);margin-bottom:16px}
+.meta b{color:var(--ink)}
+.sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-bottom:18px}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.box .l{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.box .v{font-size:28px;font-weight:700;margin:2px 0 6px}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .3s}
+.bar.ok i{background:var(--ok)}
+.tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px;font-size:13px}
+.tools select,.tools input{padding:7px 9px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:8px;font:inherit}
+.status{margin-left:auto;color:var(--mute);font-size:12px}
+.cr{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.ch{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+.ch .n{font-weight:700;font-size:16px}
+.ch .t{color:var(--mute);font-size:13px}
+.ch .p{margin-left:auto;font-weight:600}
+.cols{display:grid;grid-template-columns:1fr 1fr}
+@media (max-width:720px){.cols{grid-template-columns:1fr}}
+.col{padding:12px 16px}
+.col+.col{border-left:1px solid var(--line)}
+@media (max-width:720px){.col+.col{border-left:0;border-top:1px solid var(--line)}}
+.col h3{font-size:13px;margin:0 0 2px;text-transform:uppercase;letter-spacing:.05em;color:var(--acc)}
+.who{font-size:12.5px;color:var(--mute);margin-bottom:10px;min-height:18px}
+.row{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+.row label{font-size:12px;color:var(--mute);width:62px;flex:none}
+.row select,.row textarea{flex:1;min-width:0;padding:6px 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;font:inherit;font-size:13px}
+.row textarea{resize:vertical;min-height:34px}
+.row input[type=range]{flex:1;accent-color:var(--acc)}
+.pct{width:42px;text-align:right;font-weight:600;font-size:13px}
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:99px;border:1px solid currentColor}
+.s-todo{color:var(--todo)}.s-prog{color:var(--warn)}.s-done{color:var(--acc)}.s-ver{color:var(--ok)}
+button{font:inherit;font-size:13px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+button.pri{background:var(--acc);border-color:var(--acc);color:#fff}
+.upd{font-size:11px;color:var(--mute)}
+.note{font-size:12px;color:var(--mute);margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>NBA – File Checking Progress (Criteria 1–9)</h1>
+  <p class="sub">Department of AI · Anurag University · Verification date: 16 Nov’26 · Venue: I404 (Conference Room)</p>
+  <div class="meta">
+    <span>Overall Convener: <b>Dr. A. Mallikarjuna Reddy, HOD-AI</b></span>
+    <span>NBA Coordinator (AI): <b>Dr. G. Arun Sampaul Thomas</b></span>
+    <span>NBA Coordinators (AI&amp;ML): <b>Dr. L. Sridhara Rao &amp; Dr. Udayakumar</b></span>
+  </div>
+
+  <div class="sum">
+    <div class="box"><div class="l">Overall completion</div><div class="v" id="vAll">0%</div><div class="bar"><i id="bAll"></i></div></div>
+    <div class="box"><div class="l">AI</div><div class="v" id="vAI">0%</div><div class="bar"><i id="bAI"></i></div></div>
+    <div class="box"><div class="l">AI&amp;ML</div><div class="v" id="vML">0%</div><div class="bar"><i id="bML"></i></div></div>
+    <div class="box"><div class="l">Files verified</div><div class="v" id="vVer">0 / 18</div><div class="bar ok"><i id="bVer"></i></div></div>
+  </div>
+
+  <div class="tools">
+    <label>Show <select id="fStatus"><option value="">All statuses</option><option value="todo">Not started</option><option value="prog">In progress</option><option value="done">Completed</option><option value="ver">Verified</option></select></label>
+    <button id="btnCsv">Download CSV</button>
+    <span class="status" id="sync">Loading…</span>
+  </div>
+
+  <div id="list"></div>
+  <p class="note">Update the status, % complete and remarks for your branch (AI / AIML) under each criterion. Changes save automatically and are visible to everyone with access to this page.</p>
+</div>
+
+<script>
+var CR=[
+ {n:1,t:"09:30 – 10:30 am",ai:"Dr. G. Ashok Kumar, Dr. G. Arun Thomas, Dr. Ch. Padmini",ml:"Dr. B. Ravi Krishna, Dr. Abdul Ahad, Mrs. P. Chamundeshwari"},
+ {n:2,t:"10:30 – 11:30 am",ai:"Dr. Pardeep Kumar, Dr. Swathi",ml:"Dr. A. Udaya Kumar, Mrs. P. Archana"},
+ {n:3,t:"11:30 am – 12:30 pm",ai:"Mr. T. Balakrishna, Mr. S. Ravi Kumar, Mr. S. Shiva Shankar",ml:"Mrs. P. Vandana, Mr. N. Raghu"},
+ {n:4,t:"01:30 – 02:30 pm",ai:"Mrs. Shilpa Nagireddy, Dr. M. Madhavi, Mr. K. Chandram",ml:"Dr. G. Sridhar Reddy, Mrs. P. Srilatha"},
+ {n:5,t:"02:30 – 03:30 pm",ai:"Dr. S. Rangaswamy, Mrs. P. Revathi, Mrs. P. Sridevi",ml:"Mr. A. Rambabu, Mr. M. Rajesh"},
+ {n:6,t:"03:30 – 04:30 pm",ai:"Dr. P. Manasa, Mr. S. Rajeshwar, Mrs. S. Meghana",ml:"Dr. K.C. Sreedhar, Dr. T. Neetha, Mr. K. Krishna"},
+ {n:7,t:"04:30 – 06:00 pm",ai:"Dr. M. Mahender Yadav, Mr. A. Bharath",ml:"Dr. K. Basava Raju, Mrs. P. Hema"},
+ {n:8,t:"Time not scheduled",ai:"Dr. Md. Mustafeez-Ul-Haque, Mr. V. Venkatram Reddy, Mr. A. Arun Kumar",ml:"Dr. L. Sridhara Rao, Mr. M. Nagaraju"},
+ {n:9,t:"Time not scheduled",ai:"Dr. M. Hari Prasad, Mrs. M. Swarnalatha",ml:"Dr. B. Devender, Mrs. S. Anitha, Mrs. N.V. Sireesha"}
+];
+var ST=[["todo","Not started"],["prog","In progress"],["done","Completed"],["ver","Verified"]];
+var data={}; var col=null; var useDb=false; var timers={};
+function blank(){return {status:"todo",pct:0,remarks:""}}
+function get(n,b){var d=data["c"+n]||{};return d[b]||blank()}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+
+function branchHtml(c,b,label,who){
+  var v=get(c.n,b), id=c.n+"_"+b;
+  var opts=ST.map(function(s){return '<option value="'+s[0]+'"'+(v.status===s[0]?" selected":"")+'>'+s[1]+'</option>'}).join("");
+  return '<div class="col"><h3>'+label+'</h3><div class="who">'+esc(who)+'</div>'+
+   '<div class="row"><label>Status</label><select data-c="'+c.n+'" data-b="'+b+'" data-f="status">'+opts+'</select></div>'+
+   '<div class="row"><label>Complete</label><input type="range" min="0" max="100" step="5" value="'+v.pct+'" data-c="'+c.n+'" data-b="'+b+'" data-f="pct"><span class="pct" id="pc'+id+'">'+v.pct+'%</span></div>'+
+   '<div class="row"><label>Remarks</label><textarea data-c="'+c.n+'" data-b="'+b+'" data-f="remarks" placeholder="Pending items, missing documents…">'+esc(v.remarks||"")+'</textarea></div></div>';
+}
+function render(){
+  var f=document.getElementById("fStatus").value, h="";
+  CR.forEach(function(c){
+    var a=get(c.n,"ai"), m=get(c.n,"ml");
+    if(f && a.status!==f && m.status!==f) return;
+    var avg=Math.round((a.pct+m.pct)/2);
+    h+='<div class="cr"><div class="ch"><span class="n">Criterion '+c.n+'</span><span class="t">'+c.t+'</span>'+
+       '<span class="pill s-'+a.status+'">AI: '+lbl(a.status)+'</span><span class="pill s-'+m.status+'">AIML: '+lbl(m.status)+'</span>'+
+       '<span class="p">'+avg+'%</span></div><div class="cols">'+
+       branchHtml(c,"ai","AI",c.ai)+branchHtml(c,"ml","AIML",c.ml)+'</div></div>';
+  });
+  var active=document.activeElement, keep=active&&active.dataset&&active.dataset.f==="remarks"?active:null;
+  if(keep) return;
+  document.getElementById("list").innerHTML=h||'<div class="box">No criteria match this filter.</div>';
+  summary();
+}
+function lbl(s){for(var i=0;i<ST.length;i++)if(ST[i][0]===s)return ST[i][1];return s}
+function summary(){
+  var sa=0,sm=0,ver=0;
+  CR.forEach(function(c){var a=get(c.n,"ai"),m=get(c.n,"ml");sa+=a.pct;sm+=m.pct;if(a.status==="ver")ver++;if(m.status==="ver")ver++});
+  var pa=Math.round(sa/CR.length), pm=Math.round(sm/CR.length), po=Math.round((pa+pm)/2);
+  set("All",po);set("AI",pa);set("ML",pm);
+  document.getElementById("vVer").textContent=ver+" / 18";
+  document.getElementById("bVer").style.width=Math.round(ver/18*100)+"%";
+}
+function set(k,p){document.getElementById("v"+k).textContent=p+"%";document.getElementById("b"+k).style.width=p+"%"}
+
+function save(n){
+  var doc=data["c"+n]; doc.updated=new Date().toISOString();
+  if(useDb&&col){
+    setSync("Saving…");
+    col.doc("c"+n).set(doc).then(function(){setSync("Saved · "+new Date().toLocaleTimeString())},function(e){setSync("Could not save ("+(e&&e.code||"error")+") – you may have view-only access")});
+  }else{
+    try{localStorage.setItem("nba_c"+n,JSON.stringify(doc))}catch(e){}
+    setSync("Saved on this device only");
+  }
+}
+function setSync(t){document.getElementById("sync").textContent=t}
+
+document.getElementById("list").addEventListener("input",function(e){
+  var t=e.target, n=t.dataset.c; if(!n) return;
+  var b=t.dataset.b, f=t.dataset.f, key="c"+n;
+  data[key]=data[key]||{};
+  var v=Object.assign(blank(),data[key][b]||{});
+  v[f]=f==="pct"?parseInt(t.value,10):t.value;
+  if(f==="pct"){
+    document.getElementById("pc"+n+"_"+b).textContent=v.pct+"%";
+    if(v.pct===100&&v.status!=="ver")v.status="done";
+    else if(v.pct>0&&v.pct<100&&v.status==="todo")v.status="prog";
+  }
+  if(f==="status"){ if(v.status==="done"||v.status==="ver")v.pct=100; if(v.status==="todo")v.pct=0; if(v.status==="prog"&&(v.pct===0||v.pct===100))v.pct=50;}
+  data[key][b]=v;
+  clearTimeout(timers[key]);
+  var redraw=(f!=="remarks");
+  timers[key]=setTimeout(function(){save(n)},500);
+  if(redraw){ var sy=window.scrollY; render(); window.scrollTo(0,sy); }
+  else summary();
+});
+document.getElementById("list").addEventListener("focusout",function(){setTimeout(render,50)});
+document.getElementById("fStatus").addEventListener("change",render);
+
+document.getElementById("btnCsv").addEventListener("click",function(){
+  var rows=[["Criterion","Time","Branch","Incharges","Status","% Complete","Remarks"]];
+  CR.forEach(function(c){["ai","ml"].forEach(function(b){var v=get(c.n,b);rows.push([c.n,c.t,b==="ai"?"AI":"AIML",b==="ai"?c.ai:c.ml,lbl(v.status),v.pct,v.remarks||""])})});
+  var csv=rows.map(function(r){return r.map(function(x){return '"'+String(x).replace(/"/g,'""')+'"'}).join(",")}).join("\n");
+  claude.use("downloads").then(function(d){
+    if(d){d.save({filename:"NBA_progress_Cr1-9.csv",data:csv}).catch(function(){})}
+    else{navigator.clipboard&&navigator.clipboard.writeText(csv).then(function(){setSync("CSV copied to clipboard")})}
+  }).catch(function(){});
+});
+
+(function init(){
+  try{CR.forEach(function(c){var s=localStorage.getItem("nba_c"+c.n);if(s)data["c"+c.n]=JSON.parse(s)})}catch(e){}
+  render();
+  var t=setTimeout(function(){if(!useDb)setSync("Offline mode – saved on this device only")},10000);
+  if(window.claude&&claude.use){
+    claude.use("db").then(function(db){
+      if(!db){setSync("Offline mode – saved on this device only");return}
+      useDb=true; col=db.collection("nba_progress"); data={}; clearTimeout(t);
+      col.onSnapshot(function(snap){
+        snap.docs.forEach(function(d){data[d.id]=d.data()});
+        setSync("Live · shared"); render();
+      },function(e){useDb=false;setSync("Shared sync unavailable – saved on this device only")});
+    }).catch(function(){setSync("Offline mode – saved on this device only")});
+  }
+})();
+</script>
+</body>
+</html>
